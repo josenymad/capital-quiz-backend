@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -12,9 +11,17 @@ class QuizController extends Controller
     public function getQuiz()
     {
         try {
+            // Retrieve API URL from config
+            $apiUrl = config('services.countries_api.url');
+
+            if (!$apiUrl) {
+                Log::error('External Countries API URL is not set.');
+                return response()->json(['error' => 'Configuration error. Please check environment variables.'], 500);
+            }
+
             // Cache the API response for 24 hours to minimize external API calls
-            $countriesData = Cache::remember('countries_capitals', 86400, function () {
-                $response = Http::get('https://countriesnow.space/api/v0.1/countries/capital');
+            $countriesData = Cache::remember('countries_capitals', 86400, function () use ($apiUrl) {
+                $response = Http::get($apiUrl);
 
                 if ($response->failed()) {
                     throw new \Exception('Failed to fetch countries data.');
