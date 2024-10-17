@@ -28,16 +28,18 @@ The response contains the name of the country, an array of three capital city op
 
 #### Requirements
 
-    •	PHP 8.x
-    •	Laravel 9.x
-    •	Composer
-    •	External API URL (configured via environment variable)
+-   PHP 8.x
+-   Laravel 9.x
+-   Composer
+-   External API URL (configured via environment variable)
 
 #### Steps to Install
 
-1. Clone the repository.
+1. Clone the repository and navigate to new directory.
 
     `git clone https://github.com/josenymad/capital-quiz-backend.git`
+
+    `cd capital-quiz-backend`
 
 2. Install dependencies using composer
 
@@ -59,10 +61,14 @@ The response contains the name of the country, an array of three capital city op
 
     `php artisan serve`
 
-7. The API will be accessible at http://127.0.0.1:8000/quiz.
+7. The API will be accessible at http://localhost:8000/quiz.
 
 ## Testing
 
 To run the tests, use the following command:
 
-    `php artisan test`
+`php artisan test`
+
+## Usage
+
+Once this application is running, you can play the interactive quiz with [this](https://github.com/josenymad/capitals-quiz-front-end) UI.
