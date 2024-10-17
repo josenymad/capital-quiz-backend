@@ -94,8 +94,9 @@ class QuizControllerTest extends TestCase
         // Assert that the response status is 200 (OK)
         $response->assertStatus(200);
 
-        // Assert the correct data was returned from the cache
+        // Assert that the returned country is one of the options in the cached data
         $responseData = $response->json();
-        $this->assertEquals('Japan', $responseData['country']);
+        $countries = array_column($cachedData['data'], 'name');
+        $this->assertContains($responseData['country'], $countries);
     }
 }

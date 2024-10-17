@@ -28,9 +28,9 @@ The response contains the name of the country, an array of three capital city op
 
 #### Requirements
 
--   PHP 8.x
--   Laravel 9.x
--   Composer
+-   [PHP](https://www.php.net/)
+-   [Laravel](https://laravel.com/)
+-   [Composer](https://getcomposer.org/)
 -   External API URL (configured via environment variable)
 
 #### Steps to Install
@@ -57,11 +57,15 @@ The response contains the name of the country, an array of three capital city op
 
     `php artisan key:generate`
 
-6. Start the application
+6. Run migrations
+
+    `php artisan migrate`
+
+7. Start the application
 
     `php artisan serve`
 
-7. The API will be accessible at http://localhost:8000/quiz.
+8. The API will be accessible at http://localhost:8000/quiz.
 
 ## Testing
 
