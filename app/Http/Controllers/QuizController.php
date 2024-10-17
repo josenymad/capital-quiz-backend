@@ -60,6 +60,7 @@ class QuizController extends Controller
             return response()->json([
                 'country' => $countryName,
                 'options' => $options,
+                'correctCapital' => $correctCapital,
             ]);
 
         } catch (\Exception $e) {
