@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Quiz API** provides a simple endpoint for retrieving a random country along with a list of three possible capital cities. Users can guess the correct capital, and the API will indicate which one is correct.
+The **Quiz API** provides a simple endpoint for retrieving a random country along with a list of three possible capital cities. Combining this with the [frontend](https://github.com/josenymad/capitals-quiz-front-end), users can guess the correct capital and the API will indicate which one is correct.
 
 The API proxies an external endpoint to ensure secure data fetching while also implementing caching for efficiency.
 
